@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Control de Finanzas</title>
+    
+    <!-- ENLACES DE LA PWA (MANIFEST) -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#000000">
+
     <style>
         * {
             box-sizing: border-box;
@@ -438,7 +443,6 @@
             let totalA = 0;
             let totalG = 0;
 
-            // LÓGICA CORREGIDA: Los ahorros suman y los gastos restan del saldo disponible
             movimientos.forEach(m => {
                 if (m.tipo === 'ahorro') {
                     totalA += m.monto;
@@ -502,6 +506,13 @@
                 lista.appendChild(li);
             });
         }
+    </script>
+
+    <!-- REGISTRO DEL SERVICE WORKER (PWA) -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('sw.js');
+      }
     </script>
 </body>
 </html>
