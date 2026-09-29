@@ -271,23 +271,16 @@
             padding: 4px; 
         }
     </style>
+
     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-FS345MNTPH"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FS345MNTPH"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
-  gtag('config', 'G-FS345MNTPH');
-</script><!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-FS345MNTPH"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-FS345MNTPH');
-</script>
+      gtag('config', 'G-FS345MNTPH');
+    </script>
 </head>
 <body>
 
@@ -528,7 +521,9 @@
     <!-- REGISTRO DEL SERVICE WORKER (PWA) -->
     <script>
       if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('sw.js');
+        navigator.serviceWorker.register('sw.js')
+          .then(() => console.log("Service Worker registrado con éxito."))
+          .catch((err) => console.log("Error al registrar Service Worker:", err));
       }
     </script>
 </body>
